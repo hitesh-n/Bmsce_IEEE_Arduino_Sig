@@ -1,4 +1,4 @@
-# Bmsce_IEEE_Arduino_Sig
+# BMSCE_IEEE_Arduino_Sig
 
 This repository contains all the programes taught during the SIG.
 
