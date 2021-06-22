@@ -1,8 +1,8 @@
 #include <ESP8266WiFi.h>
 #include "ThingSpeak.h"
 
-unsigned long counterChannelNumber = 1422581;            // Channel ID
-const char * myCounterReadAPIKey = "F1D6MWWVEWBHMPJ1"; // Read API Key
+unsigned long counterChannelNumber = **channel_id**;            // Channel ID
+const char * myCounterReadAPIKey = **api_key**; // Read API Key
 const int FieldNumber1 = 1;  // The field you wish to read
 const int FieldNumber2 = 2;  // The field you wish to read
 int statusCode;
@@ -16,7 +16,7 @@ void setup()
   Serial.begin(115200);
   delay(10);
   Serial.println("Connecting to wifi"); 
-  WiFi.begin("ACT102417274243", "Virtualact1@");
+  WiFi.begin(**your_ssid**, **your_password**);
   
   while (WiFi.status() != WL_CONNECTED) 
   {
@@ -56,8 +56,7 @@ void loop()
     Serial.println("Unable to read channel / No internet connection");
   }
   delay(100);
-
-  // https://api.thingspeak.com/update?api_key=JR0NW6QA7T0M0TPK&field1=20&field2=30
+  
   if (temp > 25)
   {
     digitalWrite(D1, HIGH);
