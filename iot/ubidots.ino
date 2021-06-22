@@ -1,6 +1,6 @@
 #include <Ubidots.h>
 
-Ubidots ubi_client("BBFF-aX9uTKwtJxAelf31AMxmrtSfqYWf9k");
+Ubidots ubi_client(**your_token**);
 
 void setup() 
 {
@@ -9,7 +9,7 @@ void setup()
   Serial.begin(115200);
   delay(10);
   Serial.println("Connecting to wifi"); 
-  ubi_client.wifiConnect("ACT102417274243", "Virtualact1@");
+  ubi_client.wifiConnect(**your_ssid**, **your_password**);
   Serial.println("");
   Serial.println("WiFi connected");
 }
