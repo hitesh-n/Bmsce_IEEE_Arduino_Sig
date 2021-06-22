@@ -7,7 +7,7 @@ void setup()
   Serial.begin(115200);
   delay(10);
   Serial.println("Connecting to wifi"); 
-  WiFi.begin("ACT102417274243", "Virtualact1@");
+  WiFi.begin(**your_ssid**, **your_password**);
   
   while (WiFi.status() != WL_CONNECTED) 
   {
@@ -23,7 +23,7 @@ void loop()
 {
   if(client.connect("api.thingspeak.com",80))   //   "184.106.153.149" or api.thingspeak.com
   {  
-    client.print("GET /update?api_key=JR0NW6QA7T0M0TPK&field1=27&field2=45 HTTP/1.1\r\nHost: api.thingspeak.com\r\nConnection: close\r\n\r\n");
+    client.print("GET /update?api_key="+ your_api_key +"&field1=27&field2=45 HTTP/1.1\r\nHost: api.thingspeak.com\r\nConnection: close\r\n\r\n");
   }
   client.stop();
 
